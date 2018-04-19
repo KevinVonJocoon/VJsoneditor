@@ -6,7 +6,9 @@
 </template>
 
 <script>
-    import JSONEditor from '../node_modules/jsoneditor/dist/jsoneditor.min.js'
+    import JSONEditor from 'jsoneditor/dist/jsoneditor.min.js'
+    import 'jsoneditor/dist/jsoneditor.min.css'
+
     export default {
         data() {
             return {
@@ -120,21 +122,21 @@
         height: 100%;
         z-index: 99999;
     }
-    
+
     .jsoneditor-container.min-box {
         position: relative;
         min-width: 300px;
         width: 100%;
     }
-    
+
     .jsoneditor-box {
         height: 100%;
     }
-    
+
     .jsoneditor-container:hover .max-btn {
         display: block;
     }
-    
+
     .max-btn {
         display: none;
         position: absolute;
@@ -151,6 +153,4 @@
     .max-btn:hover {
         border: 1px solid #d7e6fe;
     }
-    
-    @import '../node_modules/jsoneditor/dist/jsoneditor.min.css';
 </style>
