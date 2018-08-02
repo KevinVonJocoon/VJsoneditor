@@ -6,10 +6,10 @@
 </template>
 
 <script>
-    import JSONEditor from 'jsoneditor/dist/jsoneditor.min.js'
-    import 'jsoneditor/dist/jsoneditor.min.css'
+  import JSONEditor from 'jsoneditor/dist/jsoneditor.min.js'
+  import 'jsoneditor/dist/jsoneditor.min.css'
 
-    export default {
+  export default {
         data() {
             return {
                 editor: null,
@@ -63,14 +63,14 @@
             initView() {
                 if (!this.editor) {
                     var container = this.$refs.jsoneditor
-                    const options = {
-                        ...{
+                    const options = Object.assign(
+                        {
                             onChange: this.onChange,
                             navigationBar: false,
                             statusBar: false
                         },
-                        ...this.options
-                    }
+                    this.options
+                    );
                     this.editor = new JSONEditor(container, options)
                 }
                 this.editor.set(this.value || {})
