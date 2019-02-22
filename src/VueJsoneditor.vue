@@ -28,7 +28,7 @@
                 }
             },
             value: {
-                type: Object
+                type: [Object, Array]
             },
             height: {
                 type: String
